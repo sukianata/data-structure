@@ -1,0 +1,16 @@
+/**
+ * 归并排序
+ *	选择相邻两个数组成一个有序数列
+ *  选择相邻两个有序数列成一个有序数列
+ *	重复第二步，直到全部组成一个有序数列
+ *
+ *
+ */
+ public void mergeSort(int []a,int left,int right){
+	int i=1;
+	int size=right-left+1;
+	while(t<size){
+	
+	
+	}
+ }

@@ -1,0 +1,22 @@
+/**
+ * 冒泡排序
+ * 两两比较相邻的元素，大的放右边，小的放左边
+ * 倒序排列时时间复杂度最大:O(n^2)
+ * 适用场景：数据量不大，对稳定性有要求，且数据基本有序		
+ */
+ 
+ public void bubbleSort(int nums[]){
+ 
+	int len=nums.length;
+	for(int i=0;i<len;i++){//每循环一次都保证了最右边的数最大
+		for(int j=0;j<len-i-1;j++){//只需要比较到前len-i个数，故对应的位置为,len-i-1
+			if(nums[j+1]<nums[j]){//第一个跟第二个比，第二个跟第三个比，类推。。
+				//交换位置
+				int temp=nums[j+1];
+				nums[j+1]=nums[j];
+				nums[j]=temp;
+			}
+		}
+	}
+	
+ }

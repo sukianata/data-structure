@@ -1,0 +1,29 @@
+/**
+ * 简单选择排序
+ *		遍历整个序列，将最小的数放最前面
+ *			遍历剩下的数列将最小的数放最前面
+ *	    重复第二步，直到剩下一个数
+ * 实现思路：
+ *		确定循环次数，并记住当前数字和当前位置
+ *		将当前位置后面所有数字与当数字进行比较，最小值赋给key,并记录最小值的位置
+ *		将最小值与第一个数的值进行交换
+ *		重复2、3步
+ * 适用场景：数据量不大，对稳定性没有要求
+ */
+ pubic void selectSort(int[] a){
+	int len=a.length;
+	for(int i=0;i<len;i++){//该层循环执行一次，保证了最左边的数最小。
+		int value=a[i];
+		int position=i;
+		for(int j=i+1;j<len;j++){
+			if(a[j]<value){
+				value=a[j];
+				position=j;
+			}
+		}
+		
+		a[position]=a[i];
+		a[i]=value;
+	}
+ 
+ }
