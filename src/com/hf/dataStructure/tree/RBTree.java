@@ -219,4 +219,45 @@ public class RBTree<T extends Comparable<T>> {
              return false;
      }
      //删除的实现过于复杂，暂不研究
+
+    /**
+     * 三种遍历方式
+     */
+    /**
+     * 前序遍历
+     */
+    public void preOrder(){
+        preOrder(root);
+    }
+    private void preOrder(TreeNode<T> node){
+        if (node!=null){
+            System.out.println(node.key+" ");
+            preOrder(node.left);
+            preOrder(node.right);
+        }
+    }
+    /**
+     * 中序遍历
+     */
+    public void midOrder(){
+        midOrder(root);
+    }
+    private void midOrder(TreeNode<T> node){
+        if (node!=null){
+            midOrder(node.left);
+            System.out.println(node.key+" ");
+            midOrder(node.right);
+        }
+    }
+    /**
+     * 后序遍历
+     */
+    public void postOrder(){
+        postOrder(root);
+    }
+    private void postOrder(TreeNode<T> node){
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.key+" ");
+    }
 }
