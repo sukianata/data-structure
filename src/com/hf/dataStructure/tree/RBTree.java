@@ -260,4 +260,50 @@ public class RBTree<T extends Comparable<T>> {
         postOrder(node.right);
         System.out.println(node.key+" ");
     }
+    /**
+     * 查找节点 时间复杂度：O(logn)
+     *      查找某个节点必须从根节点开始寻找
+     *      若查找值比当前节点值大，则搜索右子树，相等则停止搜索(终止条件)，小于则搜索左子树
+     */
+    public TreeNode<T> search(TreeNode<T> node){
+        TreeNode<T> current=root;
+        int com;
+        while (current!=null){
+            com=current.value.compareTo(node.value);
+            if (com<0){
+                current=current.left;
+            }
+            if (com>0){
+               current=current.right;
+            }
+            if (com==0){
+                return current;
+            }
+        }
+        return null;
+    }
+    /**
+     * 查找最小值，先找根的左节点，再找这个左节点的左节点，直到找到没有左节点的节点
+     */
+    public TreeNode<T> findMin(){
+        TreeNode<T> current=root;
+        TreeNode<T> minNode=current;
+        while (current!=null){
+            current=current.left;
+        }
+        return minNode;
+    }
+
+    /**
+     * 找最大值
+     * @return
+     */
+    public TreeNode<T> findMax(){
+        TreeNode<T> current=root;
+        TreeNode<T> maxNode=current;
+        while (current!=null){
+            current=current.right;
+        }
+        return maxNode;
+    }
 }
